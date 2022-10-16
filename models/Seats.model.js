@@ -8,3 +8,5 @@ const SeatModel = new mongoose.Schema({
 });
 
 const Seat = mongoose.model("Seat", SeatModel);
+
+// https://www.mongodb.com/community/forums/t/populate-a-nested-schema-with-model-having-nested-schema-in-mongoose/10553
