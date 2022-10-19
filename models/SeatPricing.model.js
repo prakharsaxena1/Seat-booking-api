@@ -9,6 +9,6 @@ const SeatPricingSchema = new mongoose.Schema({
 });
 
 const SeatPricing = mongoose.model("SeatPricing", SeatPricingSchema);
-module.export = {
+module.exports = {
     SeatPricing
 }
