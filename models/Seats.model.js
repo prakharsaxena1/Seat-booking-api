@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
 const SeatModel = new mongoose.Schema({
-  id: Number,
-  seat_identifier: String,
-  seat_class: String,
-  is_booked: Boolean
+  id: { type: Number, required: [true, 'id is requred to create seat'] },
+  seat_identifier: { type: String, required: [true, 'seat identifier required'] },
+  seat_class: { type: String, required: [true, 'seat class required'] },
+  is_booked: {type: Boolean, default: false, }
 });
 
 const Seat = mongoose.model("Seat", SeatModel);
-
-// https://www.mongodb.com/community/forums/t/populate-a-nested-schema-with-model-having-nested-schema-in-mongoose/10553
+module.exports = {
+  Seat
+}
