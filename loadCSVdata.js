@@ -3,8 +3,9 @@ require('dotenv').config({ path: __dirname + '/bin/test.env' })
 const mongoose = require("mongoose");
 const csv = require('csvtojson')
 // models
-const { Seat } = require('./models/Seats.model');
-const { SeatPricing } = require('./models/SeatPricing.model');
+const Seat = require('./models/Seats.model');
+const SeatPricing = require('./models/SeatPricing.model');
+const Bookings = require('./models/Bookings.model');
 
 const DB = process.env.DATABASE;
 mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -30,8 +31,10 @@ const SeatPricingInsert = (jsonObj) => {
             if (key === "min_price" || key === "normal_price" || key === "max_price") {
                 if (i[key] !== "") {
                     temp[key] = parseFloat(i[key].slice(1));
-                    continue;
+                }else {
+                    temp[key] = 0;
                 }
+                continue;
             }
             temp[key] = i[key];
         }
@@ -52,6 +55,9 @@ if (doWhat === "empty_db") {
     });
     SeatPricing.deleteMany({}, () => {
         console.log("deleted all from 'SeatPricings'");
+    });
+    Bookings.deleteMany({}, () => {
+        console.log("deleted all from 'Bookings'");
     });
 } else if (doWhat === "insert_db") {
     const seatsPath = `${__dirname}/csv_data/Seats.csv`;

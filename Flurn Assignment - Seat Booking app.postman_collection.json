@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "745ef12e-091f-4ff7-8cc8-dcf1adaeafa9",
+		"name": "Flurn Assignment - Seat Booking app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18040695"
+	},
+	"item": [
+		{
+			"name": "Get all seats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/seats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"seats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get seat with ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/seats/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"seats",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"seatsArray\": [\n        {\"seat_id\": 15, \"email\": \"john@gmail.com\", \"phone\": \"1289381238\"},\n        {\"seat_id\": 21, \"email\": \"abcabc@gmail.com\", \"phone\": \"123123313\"},\n        {\"seat_id\": 36, \"email\": \"don@gmail.com\", \"phone\": \"9183857281\"},\n        {\"seat_id\": 42, \"email\": \"john@yahoo.com\", \"phone\": \"9191919292\"},\n        {\"seat_id\": 59, \"email\": \"ron123@yahoo.com\", \"phone\": \"9191919291\"},\n        {\"seat_id\": 68, \"email\": \"harry@gmail.com\", \"phone\": \"9191919293\"},\n        {\"seat_id\": 75, \"email\": \"hagrid11@gmail.com\", \"phone\": \"9191919294\"},\n        {\"seat_id\": 87, \"email\": \"harry1205@gmail.com\", \"phone\": \"9191919295\"},\n        {\"seat_id\": 94, \"email\": \"harry111@gmail.com\", \"phone\": \"9191919296\"},\n        {\"seat_id\": 101, \"email\": \"harry121305@gmail.com\", \"phone\": \"9191919297\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking detials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/bookings?userIdentifier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "userIdentifier",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
