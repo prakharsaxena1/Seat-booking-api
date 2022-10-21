@@ -20,3 +20,7 @@ To add data from csv files
 # Docker commands
 - run: sudo docker run --name app -p 4000:4000/tcp -d seat-booking-app
 - log: sudo docker logs -f app
+
+# Download image from dockerhub
+
+https://hub.docker.com/r/prakhar1337/seat-book-app
