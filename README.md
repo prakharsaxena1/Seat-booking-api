@@ -15,3 +15,8 @@ To remove all data (empty collections)
 
 To add data from csv files
     run command: node loadCSVdata.js insert_db
+
+
+# Docker commands
+- run: sudo docker run --name app -p 4000:4000/tcp -d seat-booking-app
+- log: sudo docker logs -f app
